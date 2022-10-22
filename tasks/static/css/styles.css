@@ -29,6 +29,10 @@ nav div.container-fluid{
 
 /* botao de adicionar*/
 
+#add-link{
+    text-decoration: none;
+}
+
 .add-div{
     background-color: rgb(57, 124, 224);
     cursor: pointer;
