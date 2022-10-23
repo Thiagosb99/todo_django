@@ -15,12 +15,24 @@
         <input  class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar">
         <i class="fas fa-search"></i>
     </div>
+
+    {% if messages %} <!--verifica se ha messagens passadas nessa url -->
+        <ul class="messages"><!--classe exclusiva do django para tratar as messagens vindas da view -->
+            {% for message in messages %}<!--corre todas as menssages se tiver mais de uma -->
+                {% if message.tags == 'success' %}
+                    <li  class="alert alert-success">{{message}}</li> <!--verifica a tag da messagem url -->
+                {% else %}
+                    <li  class="alert alert-danger">{{message}}</li> <!--verifica a tag da messagem url -->
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
     <ul>
         {% for task in tasks %}
         <li class="task-item">
             <span><a href="/task/{{ task.id }}">{{ task.title }}</a></span>
-            <span><i class="fas fa-trash"></i></span>
-            <span><i class="fas fa-edit"></i></span>
+            <span><a href="/deletetask/{{task.id}}"><i class="fas fa-trash"></i></a></span>
+            <span><a href="/edittask/{{task.id}}"><i class="fas fa-edit"></i></a></span>
         </li>
         {% endfor %}
     </ul>

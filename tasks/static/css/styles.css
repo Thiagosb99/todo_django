@@ -85,6 +85,15 @@ nav div.container-fluid{
     border-bottom: 1px dashed #202020;
 }
 
+.task-item a{
+    color: #333;
+    text-decoration: none;
+}
+
+.task-item a:hover{
+    color: #13c43f;
+}
+
 .fas.fa-trash, .fas.fa-edit{
     cursor: pointer;
     margin: 5px;
@@ -113,4 +122,17 @@ footer p {
     text-align: center;
     top:50%;
     position: relative;
+}
+
+/* Message */
+
+ul.messages li{
+    list-style: none;
+}
+
+
+/* inputs forms.py */
+
+.formspy input[type=submit] {
+    margin-bottom: 20px;
 }
