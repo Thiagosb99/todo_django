@@ -1,2 +1,2 @@
 # todo_django
-todo list make with django
+todo list made with django
